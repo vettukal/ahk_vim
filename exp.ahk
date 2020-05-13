@@ -5,12 +5,13 @@ SendMode, Input
 global vare := ""
 global targetChar := ""
 
-!h::
-    CoordMode, Caret, Screen
-	x := A_CaretX
-	y := A_CaretY + 20
-    
-    return
+~Alt::
+KeyWait, Alt
+return
+
+ 	~Alt Up::
+Send, {Alt Up}
+return
 
 !m::
     vare := ""
@@ -24,37 +25,26 @@ global targetChar := ""
     posiii := posiii - 1
     substart := posiii + 1
     vare := SubStr(vare, substart)
-    ; MsgBox % vare ;
-    tw := posiii-1
     Send {Right %posiii%}
     return
-    ; Loop, % tw
-    ; {
-    ;     Send {Right}
-    ; }
 
 !n::
+    vare := SubStr(vare, 2)
     Send {Right}
     
-    Send +{End}
-    vare := Clip()
-    Send {Left}
+    ; Send +{End}
+    ; vare := Clip()
+    ; Send {Left}
     ; MsgBox "nfunc" %vare%
     posiii := InStr(vare,targetChar) ;
+    if (posiii<1){
+         Send {Left}
+         return
+    }
     posiii := posiii - 1
-    substart := posiii + 2
+    substart := posiii + 1
     vare := SubStr(vare, substart)
-    ; MsgBox % vare ;
-    tw := posiii-1
+    
     Send {Right %posiii%}
     return
-; !m::
-
-; Send +{End}
-; vare := Clip()
-; Send {Left}
-; Send +{Home}
-; varh := Clip()
-; Send {Right}
 ; ;MsgBox, % vare the fox says cows to to tremble before the lord
-; return
