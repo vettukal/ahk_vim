@@ -1,0 +1,8 @@
+
+!m:: 
+    InputBox, UserInput, E, E, , 80, 80, -3165, 1628
+    if ErrorLevel
+        MsgBox, CANCEL was pressed.
+    else
+        MsgBox, You entered "%UserInput%"
+
