@@ -4,16 +4,19 @@ SendMode, Input
 
 global vare := ""
 global targetChar := ""
+    
+    ;;;;;;;;;;; preventing the menu from activating
+*Alt::Send {Blind}{Alt down}
+*Alt up::
+	if InStr(A_PriorKey,"Alt")
+		Send {Blind}{Ctrl}{Alt up}  ; "Mask" the Alt-up event.
+	else
+		Send {Blind}{Alt up}
+	return
 
-~Alt::
-KeyWait, Alt
-return
 
- 	~Alt Up::
-Send, {Alt Up}
-return
-
-!m::
+;;;;;;;;;;;;;;;;;actual scripts
+RAlt & m::
     vare := ""
     targetChar := ""
     Input, SingleChar, L4, {Space}
@@ -28,7 +31,7 @@ return
     Send {Right %posiii%}
     return
 
-!n::
+RAlt & n::
     vare := SubStr(vare, 2)
     Send {Right}
     
