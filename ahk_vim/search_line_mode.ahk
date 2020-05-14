@@ -19,7 +19,7 @@ global flag := False
             ; MsgBox, You entered "%UserInput%", which is the maximum length of text.
             return
         case "Timeout":
-            Send, {backspace 1}
+            ; Send, {backspace 1}
             flag := False
             return
         case "NewInput":
@@ -52,7 +52,7 @@ global flag := False
             flag := True
             return
         
-}
+    } ; ending the else for alt alt error
 return
     }
 

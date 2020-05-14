@@ -1,54 +1,43 @@
-﻿#Include clip.ahk
-SetBatchLines, -1
-SendMode, Input
+﻿global first_hit := A_TickCount
+global second_hit := A_TickCount
+global flag := False
 
-global vare := ""
-global targetChar := ""
-    
-    ;;;;;;;;;;; preventing the menu from activating
-*Alt::Send {Blind}{Alt down}
-*Alt up::
-	if InStr(A_PriorKey,"Alt")
-		Send {Blind}{Ctrl}{Alt up}  ; "Mask" the Alt-up event.
-	else
-		Send {Blind}{Alt up}
-	return
+;
+;jfVincentjfVincentjfVincentjfVincentjfVincentjfVincentjfVincent   
+;jfVincent
 
-
-;;;;;;;;;;;;;;;;;actual scripts
-RAlt & m::
-    vare := ""
-    targetChar := ""
-    Input, SingleChar, L4, {Space}
-    Send +{End}
-    vare := Clip()
-    targetChar := SingleChar
-    Send {Left}
-    posiii := InStr(vare,SingleChar) ;
-    posiii := posiii - 1
-    substart := posiii + 1
-    vare := SubStr(vare, substart)
-    Send {Right %posiii%}
-    return
-
-RAlt & n::
-    vare := SubStr(vare, 2)
-    Send {Right}
-    
-    ; Send +{End}
-    ; vare := Clip()
-    ; Send {Left}
-    ; MsgBox "nfunc" %vare%
-    posiii := InStr(vare,targetChar) ;
-    if (posiii<1){
-         Send {Left}
-         return
+~v::
+    if (flag = True) {
+        tlapse := A_TickCount - first_hit
+        Send {BackSpace}
+        ; Send vincent
+        Send %tlapse% ,
     }
-    posiii := posiii - 1
-    substart := posiii + 1
-    vare := SubStr(vare, substart)
-    
-    Send {Right %posiii%}
+    flag := false
     return
 
-; ;MsgBox, % vare the fox says cows to to tremble before the lord
+RAlt::
+    flag := True
+    first_hit := A_TickCount
+    Hotkey, ^z, MyLabel, On
+    Hotkey, d, MyLabelD, On
+    Hotkey, j & f, MyLabelJF, On
+    return
+
+RAlt Up::
+Hotkey, ^z, Off
+Hotkey, d, Off
+Hotkey, j & f, Off
+return
+
+MyLabel:
+MsgBox You pressed %A_ThisHotkey%.
+return
+
+MyLabelD:
+    Send, {Right}
+return
+
+MyLabelJF:
+    Send, jfVincent
+return
