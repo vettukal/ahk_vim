@@ -12,14 +12,15 @@ global flag := False
     if ErrorLevel 			; timed-out (only a single press)
         return
     Else {
-       Input, UserInput, V T1 L4 C, {enter}.{esc}{tab}, fd
+       Input, UserInput, V T2 L4 C, {enter}.{esc}{tab}, fd
         switch ErrorLevel
         {
         case "Max":
             ; MsgBox, You entered "%UserInput%", which is the maximum length of text.
             return
         case "Timeout":
-            
+            Send, {backspace 1}
+            flag := False
             return
         case "NewInput":
             return
@@ -56,7 +57,8 @@ return
     }
 
 #if flag
-d::
+{
+    d::
     vare := SubStr(vare, 2)
     Send {Right}
     
@@ -71,6 +73,9 @@ d::
     
     Send {Right %posiii%}
     return
+
+}
+
 
 
 ~w::
@@ -115,7 +120,14 @@ d::
 ~y::
 
 space::
+~Home::
+~End::
+~Left::
+~Right::
 
+~>!r::
 ~z::
     flag := False
+    return
+
 
