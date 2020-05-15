@@ -15,7 +15,7 @@ global ticker_count := 0
 charCommand() 
 {
     
-    Input, UserInput, V T2 L4 C, {enter}.{esc}{tab}, d
+    Input, UserInput, V T2 L4 C, {enter}.{esc}{tab}, d,l
     switch ErrorLevel
     {
     case "Max":
@@ -36,9 +36,14 @@ charCommand()
     }
     switch UserInput
     {
-    case "d":   
-        flag := false
-        forward3CharSearch()
+        case "d":   
+            flag := false
+            forward3CharSearch()
+            return
+        case "l": 
+            Send, {BackSpace 2}  
+            Send, ^+l
+            return
     }
     return
 }
@@ -76,11 +81,17 @@ forward3CharSearch() {
     } else 
     flag := false
     return
-
+                 
 ~Space::
     if(flagForwardSearch = True) {
         flagForwardSearch := False
-        Send, {BackSpace}
+        Send, {BackSpace 1}
+    }
+    return
+
+~Esc:: 
+    if(flagForwardSearch = True) {
+        flagForwardSearch := False
     }
     return
 
@@ -93,8 +104,8 @@ RAlt::
     Hotkey, a, MyLabelA, On
     Hotkey, w, MyLabelW, On
     Hotkey, q, MyLabelQ, On
+    Hotkey, g, MyLabelG, On
     Hotkey, e, MyLabelE, On
-    Hotkey, f, MyLabelF, On
     Hotkey, k & e, MyLabelKE, On
     Hotkey, k & q, MyLabelKQ, On
     Hotkey, r, MyLabelR, On
@@ -108,7 +119,7 @@ RAlt Up::
     Hotkey, w, Off
     Hotkey, q, Off
     Hotkey, e, Off
-    Hotkey, f, Off
+    Hotkey, g, Off
     Hotkey, k & e, Off
     Hotkey, k & q, Off
     Hotkey, r, Off
@@ -160,10 +171,12 @@ return
 MyLabelR:
     Send ^+{Right}
 return
-MyLabelF:
-    Send ^+w
+MyLabelG:
+    UniqueID := WinActive("ahk_exe Code.exe")
+    if (UniqueID) {
+        Send ^+w
+    }    
 return
-
 
 MyLabelD:
     if(flagForwardSearch = True) {
