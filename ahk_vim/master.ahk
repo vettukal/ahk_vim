@@ -106,9 +106,14 @@ RAlt::
     Hotkey, q, MyLabelQ, On
     Hotkey, g, MyLabelG, On
     Hotkey, e, MyLabelE, On
+    Hotkey, r, MyLabelR, On
+
     Hotkey, k & e, MyLabelKE, On
     Hotkey, k & q, MyLabelKQ, On
-    Hotkey, r, MyLabelR, On
+    Hotkey, k & a, MyLabelKA, On
+    Hotkey, k & s, MyLabelKS, On
+    Hotkey, k & d, MyLabelKD, On
+    Hotkey, k & w, MyLabelKW, On
     return
 
 RAlt Up::
@@ -120,9 +125,15 @@ RAlt Up::
     Hotkey, q, Off
     Hotkey, e, Off
     Hotkey, g, Off
+    Hotkey, r, Off
+
     Hotkey, k & e, Off
     Hotkey, k & q, Off
-    Hotkey, r, Off
+    Hotkey, k & a, Off
+    Hotkey, k & s, Off
+    Hotkey, k & d, Off
+    Hotkey, k & w, Off
+    
     ticker()
 return
 
@@ -162,14 +173,26 @@ return
 MyLabelE:
     Send {End}
 return
+MyLabelR:
+    Send ^+{Right}
+return
 MyLabelKE:
     Send +{End}
 return
 MyLabelKQ:
     Send +{Home}
 return
-MyLabelR:
-    Send ^+{Right}
+MyLabelKA:
+    Send +{Left}
+return
+MyLabelKS:
+    Send +{Down}
+return
+MyLabelKD:
+    Send +{Right}
+return
+MyLabelKW:
+    Send +{Up}
 return
 MyLabelG:
     UniqueID := WinActive("ahk_exe Code.exe")
