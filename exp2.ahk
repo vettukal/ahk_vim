@@ -10,6 +10,8 @@ global fullLineClip := ""
 global targetChar := ""
 global flagForwardSearch := False
 
+global ticker_count := 0
+
 charCommand() 
 {
     
@@ -67,6 +69,7 @@ forward3CharSearch() {
         tlapse := A_TickCount - first_hit
         if(tlapse > 1000)
         {
+            flag := False
             return
         }
         charCommand()
@@ -95,7 +98,25 @@ RAlt Up::
     Hotkey, d, Off
     Hotkey, s, Off
     Hotkey, j & f, Off
+    ticker()
 return
+
+
+ticker() {
+    
+    ticker_count := ticker_count + 1
+    if(Mod(ticker_count, 2) = 0) {
+        ticker_count := 0
+        if( (A_TickCount - second_hit) <750) {
+            flag := False 
+            Send, {Enter}
+        }
+    } else {
+        second_hit := A_TickCount
+    }
+    
+}
+
 
 MyLabel:
 MsgBox You pressed %A_ThisHotkey%.
