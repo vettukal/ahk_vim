@@ -90,14 +90,26 @@ RAlt::
     Hotkey, ^z, MyLabel, On
     Hotkey, d, MyLabelD, On
     Hotkey, s, MyLabelS, On
-    Hotkey, j & f, MyLabelJF, On
+    Hotkey, a, MyLabelA, On
+    Hotkey, w, MyLabelW, On
+    Hotkey, q, MyLabelQ, On
+    Hotkey, e, MyLabelE, On
+    Hotkey, k & e, MyLabelKE, On
+    Hotkey, k & q, MyLabelKQ, On
+    Hotkey, r, MyLabelR, On
     return
 
 RAlt Up::
     Hotkey, ^z, Off
     Hotkey, d, Off
     Hotkey, s, Off
-    Hotkey, j & f, Off
+    Hotkey, a, Off
+    Hotkey, w, Off
+    Hotkey, q, Off
+    Hotkey, e, Off
+    Hotkey, k & e, Off
+    Hotkey, k & q, Off
+    Hotkey, r, Off
     ticker()
 return
 
@@ -123,8 +135,30 @@ MsgBox You pressed %A_ThisHotkey%.
 return
 
 MyLabelS:
-    Send {Right}
+    Send {Down}
+    return
+MyLabelW:
+    Send {Up}
+    return
+MyLabelA:
+    Send {Left}
 return
+MyLabelQ:
+    Send {Home}
+return
+MyLabelE:
+    Send {End}
+return
+MyLabelKE:
+    Send +{End}
+return
+MyLabelKQ:
+    Send +{Home}
+return
+MyLabelR:
+    Send ^+{Right}
+return
+
 
 MyLabelD:
     if(flagForwardSearch = True) {
@@ -149,6 +183,3 @@ MyLabelD:
 return
 
 
-MyLabelJF:
-    Send, jfVincent
-return
