@@ -224,8 +224,18 @@ MyLabelE:
     Send {End}
 return
 MyLabelR:
+    c_lapse := A_TickCount - c_timer
+    if(c_lapse < 1000) {
+        UniqueID := WinActive("ahk_exe Code.exe")
+        if (UniqueID) {
+            Send ^{End}
+            Send !{Enter}
+            return
+        } 
+    }
     Send ^+{Right}
 return
+
 MyLabelKE:
     Send +{End}
 return
