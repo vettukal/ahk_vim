@@ -12,6 +12,9 @@ global flagForwardSearch := False
 
 global ticker_count := 0
 
+
+global c_flag := False
+global c_timer := A_TickCount
 charCommand() 
 {
     
@@ -79,9 +82,9 @@ forward3CharSearch() {
         }
         charCommand()
     } else 
-    flag := false
+    flag := false ; what the literal fck
     return
-                 
+
 ~Space::
     if(flagForwardSearch = True) {
         flagForwardSearch := False
@@ -110,10 +113,25 @@ RAlt::
 
     Hotkey, k & e, MyLabelKE, On
     Hotkey, k & q, MyLabelKQ, On
+
     Hotkey, k & a, MyLabelKA, On
     Hotkey, k & s, MyLabelKS, On
     Hotkey, k & d, MyLabelKD, On
     Hotkey, k & w, MyLabelKW, On
+
+    ;;adding ctrl a and d
+    Hotkey, j & a, MyLabelJA, On
+    Hotkey, j & d, MyLabelJD, On
+    Hotkey, j & q, MyLabelJQ, On
+    Hotkey, j & e, MyLabelJE, On
+
+    ;; navigation number
+    Hotkey, 1, MyLabel1, On
+    Hotkey, 2, MyLabel2, On
+    Hotkey, 3, MyLabel3, On
+
+    Hotkey, c, MyLabelC, On
+
     return
 
 RAlt Up::
@@ -133,7 +151,17 @@ RAlt Up::
     Hotkey, k & s, Off
     Hotkey, k & d, Off
     Hotkey, k & w, Off
+    Hotkey, j & a, Off
+    Hotkey, j & d, Off
+    Hotkey, j & q, Off
+    Hotkey, j & e, Off
     
+    ;; navigation number screens
+    Hotkey, 1, Off
+    Hotkey, 2, Off
+    Hotkey, 3, Off
+
+    Hotkey, c, Off
     ticker()
 return
 
@@ -159,6 +187,11 @@ MsgBox You pressed %A_ThisHotkey%.
 return
 
 MyLabelS:
+    c_lapse := A_TickCount - c_timer
+    if(c_lapse < 1000) {
+        Send ^s
+        return
+    }
     Send {Down}
     return
 MyLabelW:
@@ -194,6 +227,45 @@ return
 MyLabelKW:
     Send +{Up}
 return
+MyLabelJA:
+    Send ^{Left}
+return
+MyLabelJD:
+    Send ^{Right}
+return
+MyLabelJQ:
+    Send ^{Home}
+return
+MyLabelJE:
+    Send ^{End}
+return
+;; navigation number
+MyLabel1:
+    CoordMode, Mouse, Screen
+    MouseGetPos, X, Y
+    DllCall("SetCursorPos", "int", -8070, "int", 1608)
+    MouseClick
+return 
+
+MyLabel2:
+    CoordMode, Mouse, Screen
+    MouseGetPos, X, Y
+    DllCall("SetCursorPos", "int", -3370, "int", 1408)
+    MouseClick
+return
+MyLabel3:
+    CoordMode, Mouse, Screen
+    MouseGetPos, X, Y
+    DllCall("SetCursorPos", "int", 1903, "int", 701)
+    MouseClick
+return
+
+
+MyLabelC:
+    c_flag := True
+    c_timer := A_TickCount
+return 
+
 MyLabelG:
     UniqueID := WinActive("ahk_exe Code.exe")
     if (UniqueID) {
@@ -202,6 +274,11 @@ MyLabelG:
 return
 
 MyLabelD:
+    c_lapse := A_TickCount - c_timer
+    if(c_lapse < 1000) {
+        Send ^d
+        return
+    }
     if(flagForwardSearch = True) {
         fullLineClip := SubStr(fullLineClip, 2)
         Send {Right}
@@ -217,10 +294,8 @@ MyLabelD:
         
         Send {Right %posiii%}
         return
-    } else {
-        Send {Right}
-    }
+    } 
+    
+    Send {Right}
     
 return
-
-
