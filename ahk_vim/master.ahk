@@ -131,7 +131,8 @@ RAlt::
     Hotkey, 3, MyLabel3, On
 
     Hotkey, c, MyLabelC, On
-
+    Hotkey, v, MyLabelV, On
+    Hotkey, t, MyLabelT, On
     return
 
 RAlt Up::
@@ -162,6 +163,8 @@ RAlt Up::
     Hotkey, 3, Off
 
     Hotkey, c, Off
+    Hotkey, v, Off
+    Hotkey, t, Off
     ticker()
 return
 
@@ -204,6 +207,14 @@ MyLabelQ:
     Send {Home}
 return
 MyLabelE:
+    c_lapse := A_TickCount - c_timer
+    if(c_lapse < 1000) {
+        UniqueID := WinActive("ahk_exe Code.exe")
+        if (UniqueID) {
+            Send ^{Enter}
+            return
+        } 
+    }
     Send {End}
 return
 MyLabelR:
@@ -262,9 +273,30 @@ return
 
 
 MyLabelC:
+    tlapse := A_TickCount - c_timer
+    if(tlapse < 700) {
+        Send ^c
+        return
+    }
     c_flag := True
     c_timer := A_TickCount
 return 
+
+MyLabelV:
+    c_lapse := A_TickCount - c_timer
+    if(c_lapse < 1000) {
+        Send ^v
+        return
+    }
+return
+
+MyLabelT:
+    c_lapse := A_TickCount - c_timer
+    if(c_lapse < 1000) {
+        Send ^{Tab}
+        return
+    }
+return
 
 MyLabelG:
     UniqueID := WinActive("ahk_exe Code.exe")
