@@ -9,6 +9,7 @@ global flag := False
 global fullLineClip := ""
 global targetChar := ""
 global flagForwardSearch := False
+global forward_timer := A_TickCount
 
 global ticker_count := 0
 
@@ -69,6 +70,7 @@ forward3CharSearch() {
     Send {Right %posiii%}
     Suspend, off
     flagForwardSearch := True
+    forward_timer := A_TickCount
     return
 }
 
@@ -86,11 +88,15 @@ forward3CharSearch() {
     return
 
 ~Space::
-    if(flagForwardSearch = True) {
-        flagForwardSearch := False
-        Send, {BackSpace 1}
+    f_laps := A_TickCount - forward_timer
+    if(f_laps < 2000) {
+        if(flagForwardSearch = True) {
+            flagForwardSearch := False
+            Send, {BackSpace 1}
+        }
+        return
     }
-    return
+    
 
 ~Esc:: 
     if(flagForwardSearch = True) {
@@ -311,22 +317,29 @@ MyLabelD:
         Send ^d
         return
     }
-    if(flagForwardSearch = True) {
-        fullLineClip := SubStr(fullLineClip, 2)
-        Send {Right}
-        
-        posiii := InStr(fullLineClip,targetChar) ;
-        if (posiii<1){
-            Send {Left}
+    f_laps := A_TickCount - forward_timer
+    
+    if(f_laps < 1500) {
+        if(flagForwardSearch = True) {
+            
+            fullLineClip := SubStr(fullLineClip, 2)
+            Send {Right}
+            
+            posiii := InStr(fullLineClip,targetChar) ;
+            if (posiii<1){
+                Send {Left}
+                return
+            }
+            posiii := posiii - 1
+            substart := posiii + 1
+            fullLineClip := SubStr(fullLineClip, substart)
+            
+            Send {Right %posiii%}
+            forward_timer := A_TickCount
             return
         }
-        posiii := posiii - 1
-        substart := posiii + 1
-        fullLineClip := SubStr(fullLineClip, substart)
-        
-        Send {Right %posiii%}
-        return
-    } 
+    }
+     
     
     Send {Right}
     
