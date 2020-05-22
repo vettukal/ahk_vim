@@ -42,28 +42,12 @@
             "after": ["$"]
         },
         {
-            "before": ["w"],
-            "after": ["k"]
-        },
-        {
-            "before": ["s"],
-            "after": ["j"]
-        },
-        {
-            "before": ["a"],
-            "after": ["h"]
-        },
-        {
-            "before": ["d"],
-            "after": ["l"]
-        },
-        {
-            "before": ["l"],
-            "after": ["w"]
-        },
-        {
             "before": ["<leader>","z"],
             "after": ["u"]         
+        },
+        {  
+            "before": ["x"],
+            "after": ["\"","0","x"]         
         },
         {  
             "before": ["<leader>","v"],
@@ -87,6 +71,10 @@
         {
             "before": ["e"],
             "after": ["$"]
+        },
+        {  
+            "before": ["<leader>","x"],
+            "after": ["\"","0","x"]         
         },
         {
             "before": ["<leader>","g"],
@@ -117,10 +105,21 @@
     "vim.statusBarColors.easymotionmode": "#007ACC",
     "vim.statusBarColors.easymotioninputmode": "#007ACC",
     "vim.statusBarColors.surroundinputmode": "#007ACC",
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#B48EAD",
-        "statusBar.noFolderBackground": "#B48EAD",
-        "statusBar.debuggingBackground": "#B48EAD"
-    }
+    "vim.enableNeovim": false,
+    "vscode-neovim.neovimPath": "C:\\Users\\holyv\\Downloads\\Neovim\\bin\\nvim.exe",
+    "vscode-neovim.highlightGroups.unknownHighlight": {
     
+    },
+    "vscode-neovim.useCtrlKeysForInsertMode": false,
+    "vscode-neovim.useCtrlKeysForNormalMode": false,
+    "editor.scrollBeyondLastLine": false,
+    "multiCommand.commands": [
+        {
+            "command": "multiCommand.insertExit",
+            "sequence": [
+                { "command": "vscode-neovim.compositeEscape1", "args": "j" },
+                "peacock.changeColorToPeacockBlue"
+            ]
+        }
+    ] 
 }
