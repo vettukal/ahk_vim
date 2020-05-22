@@ -1,0 +1,126 @@
+{
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "window.menuBarVisibility": "visible",
+    "julia.enableTelemetry": true,
+    "shellLauncher.shells.windows": [
+        {
+            "shell": "C:\\Windows\\System32\\cmd.exe",
+            "label": "cmd"
+        },
+        {
+            "shell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "label": "PowerShell"
+        },
+        {
+            "shell": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "label": "Git bash"
+        },
+        {
+            "shell": "C:\\Windows\\System32\\bash.exe",
+            "label": "WSL Bash"
+        },
+        {
+            "shell": "C:\\Users\\holyv\\AppData\\Local\\Programs\\Julia\\Julia-1.4.1\\bin\\julia.exe",
+            "label": "Julia"
+        }
+    
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+       
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["q"],
+            "after": ["0"]
+        },
+        {
+            "before": ["e"],
+            "after": ["$"]
+        },
+        {
+            "before": ["w"],
+            "after": ["k"]
+        },
+        {
+            "before": ["s"],
+            "after": ["j"]
+        },
+        {
+            "before": ["a"],
+            "after": ["h"]
+        },
+        {
+            "before": ["d"],
+            "after": ["l"]
+        },
+        {
+            "before": ["l"],
+            "after": ["w"]
+        },
+        {
+            "before": ["<leader>","z"],
+            "after": ["u"]         
+        },
+        {  
+            "before": ["<leader>","v"],
+            "after": ["\"","0","p"]         
+        },
+        {
+            "before": ["<leader>","s"],
+            "commands": [":w"]
+        },
+        {
+            "before": ["<leader>","g"],
+            "after": ["<leader>","<leader>","s"]
+
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["e"],
+            "after": ["$"]
+        },
+        {
+            "before": ["e"],
+            "after": ["$"]
+        },
+        {
+            "before": ["<leader>","g"],
+            "after": ["<leader>","<leader>","s"]
+
+        },
+        {
+            "before": ["<leader>","c"],
+            "after": ["y"]
+        },
+        {
+            "before": ["c"],
+            "after": []
+        }
+    ],
+    "vim.easymotion": true,
+    "vim.useCtrlKeys": false,
+    "vim.leader": "<space>",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": ["#8FBCBB", "#434C5E"],
+    "vim.statusBarColors.insert": "#BF616A",
+    "vim.statusBarColors.visual": "#B48EAD",
+    "vim.statusBarColors.visualline": "#B48EAD",
+    "vim.statusBarColors.visualblock": "#A3BE8C",
+    "vim.statusBarColors.replace": "#D08770",
+    "vim.statusBarColors.commandlineinprogress": "#007ACC",
+    "vim.statusBarColors.searchinprogressmode": "#007ACC",
+    "vim.statusBarColors.easymotionmode": "#007ACC",
+    "vim.statusBarColors.easymotioninputmode": "#007ACC",
+    "vim.statusBarColors.surroundinputmode": "#007ACC",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#B48EAD",
+        "statusBar.noFolderBackground": "#B48EAD",
+        "statusBar.debuggingBackground": "#B48EAD"
+    }
+    
+}

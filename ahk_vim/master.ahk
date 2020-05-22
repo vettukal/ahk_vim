@@ -226,12 +226,12 @@ return
 MyLabelR:
     c_lapse := A_TickCount - c_timer
     if(c_lapse < 1000) {
-        UniqueID := WinActive("ahk_exe Code.exe")
-        if (UniqueID) {
-            Send ^{End}
+        ; UniqueID := WinActive("ahk_exe Code.exe")
+        ; if (UniqueID) 
+        ; {
             Send !{Enter}
             return
-        } 
+        ; } 
     }
     Send ^+{Right}
 return
@@ -315,10 +315,12 @@ MyLabelT:
 return
 
 MyLabelG:
-    UniqueID := WinActive("ahk_exe Code.exe")
-    if (UniqueID) {
-        Send ^+w
-    }    
+    c_lapse := A_TickCount - c_timer
+    if(c_lapse < 1000) {
+        Send +!/
+        return
+    }
+    Send !/
 return
 
 MyLabelD:
