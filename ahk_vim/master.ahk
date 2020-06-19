@@ -195,7 +195,7 @@ ticker() {
         ticker_count := 0
         if( (A_TickCount - second_hit) <750) {
             flag := False 
-            Send, {Enter}
+            Send {Alt Down}{Tab}{Alt Up} 
         }
     } else {
         second_hit := A_TickCount

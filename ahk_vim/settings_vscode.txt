@@ -23,65 +23,88 @@
             "shell": "C:\\Users\\holyv\\AppData\\Local\\Programs\\Julia\\Julia-1.4.1\\bin\\julia.exe",
             "label": "Julia"
         }
-    
     ],
-    "vscode-neovim.highlightGroups.unknownHighlight": {
-    
-    },
+    "vscode-neovim.highlightGroups.unknownHighlight": {},
     "vscode-neovim.useCtrlKeysForInsertMode": false,
-    "vscode-neovim.useCtrlKeysForNormalMode": false,
     "editor.scrollBeyondLastLine": false,
     "peacock.affectTitleBar": false,
-    "peacock.favoriteColors": [
-        {
-            "name": "Angular Red",
-            "value": "#dd0531"
+    "vscode-neovim.neovimPath": "C:\\Users\\holyv\\Downloads\\Neovim\\bin\\nvim.exe",
+    "spacecode.bindings": [{
+            "key": "à",
+            "name": "check custom",
+            "type": "command",
+            "command": "metaGo.gotoBefore"
         },
         {
-            "name": "Azure Blue",
-            "value": "#007fff"
+            "key": "f",
+            "name": "File...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "p",
+                    "name": "Open file",
+                    "type": "command",
+                    "command": "workbench.action.quickOpen"
+                }
+            ]
         },
         {
-            "name": "JavaScript Yellow",
-            "value": "#f9e64f"
+            "key": "v",
+            "name": "view",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "q",
+                    "name": "quit editor",
+                    "type": "command",
+                    "command": "workbench.action.closeActiveEditor"
+                },
+                {
+                    "key": "z",
+                    "name": "Zen Mode",
+                    "type": "command",
+                    "command": "workbench.action.toggleZenMode"
+                }
+            ]
+        },
+        {                    
+            "key": "a",
+            "name": "focus left",
+            "type": "command",
+            "command": "workbench.action.focusLeftGroup"
+        },
+        {                    
+            "key": "d",
+            "name": "focus right",
+            "type": "command",
+            "command": "workbench.action.focusRightGroup"
         },
         {
-            "name": "Mandalorian Blue",
-            "value": "#1857a4"
-        },
-        {
-            "name": "Node Green",
-            "value": "#215732"
-        },
-        {
-            "name": "React Blue",
-            "value": "#61dafb"
-        },
-        {
-            "name": "Something Different",
-            "value": "#832561"
-        },
-        {
-            "name": "Svelte Orange",
-            "value": "#ff3d00"
-        },
-        {
-            "name": "Vue Green",
-            "value": "#42b883"
-        },
-        {
-            "name": "darkInsertBlue",
-            "value": "#003e80"
-        },
-        {
-            "name": "insertLightBlue",
-            "value": "#3d84e2"
-        },
-        {
-            "name": "visualLight",
-            "value": "#af5800"
+            
+            "key": "s",
+            "name": "Source code",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "c",
+                    "name": "comment",
+                    "type": "command",
+                    "command": "editor.action.commentLine"
+                },
+                {
+                    "key": "p",
+                    "name": "peek",
+                    "type": "command",
+                    "command": "editor.action.peekDefinition"
+                },
+                {
+                    "key": "d",
+                    "name": "docs",
+                    "type": "command",
+                    "command": "editor.action.showHover"
+                }
+            ]
         }
     ],
-    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Users\\holyv\\Downloads\\Neovim\\bin\\nvim.exe",
-    "vscode-neovim.neovimPath": "C:\\Users\\holyv\\Downloads\\Neovim\\bin\\nvim.exe"
+    "spacecode.checkVimConfig": false
 }
