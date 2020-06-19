@@ -1,45 +1,12 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-    {
-        "key": "escape",
-        "command": "extension.jumpy-exit",
-        "when": "editorTextFocus && jumpy.isJumpyMode"
-    },
-    {
-        "key": "ctrl+shift+l",
-        "command": "extension.jumpy-line",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+shift+w",
-        "command": "extension.jumpy-word",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+d",
-        "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+k",
-        "command": "-editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+d",
-        "command": "-editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
-    },
+    
     {
         "key": "ctrl+enter",
         "command": "-language-julia.executeJuliaCodeInREPL",
         "when": "editorTextFocus && editorLangId == 'julia'"
     },
-    {
-        "key": "ctrl+shift+i",
-        "command": "-workbench.action.toggleDevTools",
-        "when": "isDevelopment"
-    },
+   
     {
         "key": "ctrl+shift+i",
         "command": "shellLauncher.launch"
@@ -55,14 +22,15 @@
         "when": "editorTextFocus && editorLangId == 'julia'"
     },
     {
-        "command": "extension.multiCommand.execute",
-        "key": "j",
-        "when": "neovim.mode == insert",
-        "args": { "command": "multiCommand.insertExit" }
+        "key": "alt+/",
+        "command": "metaGo.gotoSmart",
+        "when": "neovim.mode != 'insert'"
     },
     {
-        "key": "alt+/",
-        "command": "metaGo.gotoSmart"
+        "command": "vscode-neovim.compositeEscape1",
+        "key": "j",
+        "when": "neovim.mode == insert",
+        "args": "j"
     },
     {
         "key": "alt+/",

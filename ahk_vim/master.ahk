@@ -4,6 +4,7 @@ SendMode, Input
 
 global first_hit := A_TickCount
 global second_hit := A_TickCount
+global cap_hit := A_TickCount
 global flag := False
 
 global fullLineClip := ""
@@ -16,6 +17,17 @@ global ticker_count := 0
 
 global c_flag := False
 global c_timer := A_TickCount
+
+Capslock::
+    tlapse := A_TickCount - cap_hit
+    if(tlapse < 400) {
+        Send à
+    } else {
+        Send {f10}
+    }
+    cap_hit := A_TickCount
+return
+
 charCommand() 
 {
     
@@ -53,6 +65,7 @@ charCommand()
 }
 
 ^!r::Reload  
++^!r::Suspend
 
 forward3CharSearch() {
     Send, {backspace 2}
