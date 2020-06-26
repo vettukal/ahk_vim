@@ -283,20 +283,20 @@ return
 MyLabel1:
     CoordMode, Mouse, Screen
     MouseGetPos, X, Y
-    DllCall("SetCursorPos", "int", -8070, "int", 1608)
+    DllCall("SetCursorPos", "int", -1600, "int", 150)
     MouseClick
 return 
 
 MyLabel2:
     CoordMode, Mouse, Screen
     MouseGetPos, X, Y
-    DllCall("SetCursorPos", "int", -3370, "int", 1408)
+    DllCall("SetCursorPos", "int", 390, "int", 50)
     MouseClick
 return
 MyLabel3:
     CoordMode, Mouse, Screen
     MouseGetPos, X, Y
-    DllCall("SetCursorPos", "int", 1903, "int", 701)
+    DllCall("SetCursorPos", "int", 173, "int", 116)
     MouseClick
 return
 
