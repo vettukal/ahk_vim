@@ -117,6 +117,76 @@ forward3CharSearch() {
     }
     return
 
+RAlt::
+    flag := True
+    first_hit := A_TickCount
+    Hotkey, ^z, MyLabel, On
+    Hotkey, d, MyLabelD, On
+    Hotkey, s, MyLabelS, On
+    Hotkey, a, MyLabelA, On
+    Hotkey, w, MyLabelW, On
+    Hotkey, q, MyLabelQ, On
+    Hotkey, g, MyLabelG, On
+    Hotkey, e, MyLabelE, On
+    Hotkey, r, MyLabelR, On
+
+    Hotkey, k & e, MyLabelKE, On
+    Hotkey, k & q, MyLabelKQ, On
+
+    Hotkey, k & a, MyLabelKA, On
+    Hotkey, k & s, MyLabelKS, On
+    Hotkey, k & d, MyLabelKD, On
+    Hotkey, k & w, MyLabelKW, On
+
+    ;;adding ctrl a and d
+    Hotkey, j & a, MyLabelJA, On
+    Hotkey, j & d, MyLabelJD, On
+    Hotkey, j & q, MyLabelJQ, On
+    Hotkey, j & e, MyLabelJE, On
+
+    ;; navigation number
+    Hotkey, 1, MyLabel1, On
+    Hotkey, 2, MyLabel2, On
+    Hotkey, 3, MyLabel3, On
+
+    Hotkey, c, MyLabelC, On
+    Hotkey, v, MyLabelV, On
+    Hotkey, t, MyLabelT, On
+    return
+
+RAlt Up::
+    Hotkey, ^z, Off
+    Hotkey, d, Off
+    Hotkey, s, Off
+    Hotkey, a, Off
+    Hotkey, w, Off
+    Hotkey, q, Off
+    Hotkey, e, Off
+    Hotkey, g, Off
+    Hotkey, r, Off
+
+    Hotkey, k & e, Off
+    Hotkey, k & q, Off
+    Hotkey, k & a, Off
+    Hotkey, k & s, Off
+    Hotkey, k & d, Off
+    Hotkey, k & w, Off
+    Hotkey, j & a, Off
+    Hotkey, j & d, Off
+    Hotkey, j & q, Off
+    Hotkey, j & e, Off
+    
+    ;; navigation number screens
+    Hotkey, 1, Off
+    Hotkey, 2, Off
+    Hotkey, 3, Off
+
+    Hotkey, c, Off
+    Hotkey, v, Off
+    Hotkey, t, Off
+    ticker()
+return
+
 
 ticker() {
     
