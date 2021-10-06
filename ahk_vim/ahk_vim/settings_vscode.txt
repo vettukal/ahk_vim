@@ -1,0 +1,110 @@
+{
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "window.menuBarVisibility": "visible",
+    "julia.enableTelemetry": true,
+    "shellLauncher.shells.windows": [
+        {
+            "shell": "C:\\Windows\\System32\\cmd.exe",
+            "label": "cmd"
+        },
+        {
+            "shell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "label": "PowerShell"
+        },
+        {
+            "shell": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "label": "Git bash"
+        },
+        {
+            "shell": "C:\\Windows\\System32\\bash.exe",
+            "label": "WSL Bash"
+        },
+        {
+            "shell": "C:\\Users\\holyv\\AppData\\Local\\Programs\\Julia\\Julia-1.4.1\\bin\\julia.exe",
+            "label": "Julia"
+        }
+    ],
+    "vscode-neovim.highlightGroups.unknownHighlight": {},
+    "vscode-neovim.useCtrlKeysForInsertMode": false,
+    "editor.scrollBeyondLastLine": false,
+    "peacock.affectTitleBar": false,
+    "vscode-neovim.neovimPath": "C:\\Users\\holyv\\Downloads\\Neovim\\bin\\nvim.exe",
+    "spacecode.bindings": [{
+            "key": "à",
+            "name": "check custom",
+            "type": "command",
+            "command": "metaGo.gotoBefore"
+        },
+        {
+            "key": "f",
+            "name": "File...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "p",
+                    "name": "Open file",
+                    "type": "command",
+                    "command": "workbench.action.quickOpen"
+                }
+            ]
+        },
+        {
+            "key": "v",
+            "name": "view",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "q",
+                    "name": "quit editor",
+                    "type": "command",
+                    "command": "workbench.action.closeActiveEditor"
+                },
+                {
+                    "key": "z",
+                    "name": "Zen Mode",
+                    "type": "command",
+                    "command": "workbench.action.toggleZenMode"
+                }
+            ]
+        },
+        {                    
+            "key": "a",
+            "name": "focus left",
+            "type": "command",
+            "command": "workbench.action.focusLeftGroup"
+        },
+        {                    
+            "key": "d",
+            "name": "focus right",
+            "type": "command",
+            "command": "workbench.action.focusRightGroup"
+        },
+        {
+            
+            "key": "s",
+            "name": "Source code",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "c",
+                    "name": "comment",
+                    "type": "command",
+                    "command": "editor.action.commentLine"
+                },
+                {
+                    "key": "p",
+                    "name": "peek",
+                    "type": "command",
+                    "command": "editor.action.peekDefinition"
+                },
+                {
+                    "key": "d",
+                    "name": "docs",
+                    "type": "command",
+                    "command": "editor.action.showHover"
+                }
+            ]
+        }
+    ],
+    "spacecode.checkVimConfig": false
+}
