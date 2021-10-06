@@ -1,37 +1,14 @@
-{
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
-    "window.menuBarVisibility": "visible",
-    "julia.enableTelemetry": true,
-    "shellLauncher.shells.windows": [
+"spacecode.bindings": [
+        
         {
-            "shell": "C:\\Windows\\System32\\cmd.exe",
-            "label": "cmd"
-        },
-        {
-            "shell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-            "label": "PowerShell"
-        },
-        {
-            "shell": "C:\\Program Files\\Git\\bin\\bash.exe",
-            "label": "Git bash"
-        },
-        {
-            "shell": "C:\\Windows\\System32\\bash.exe",
-            "label": "WSL Bash"
-        },
-        {
-            "shell": "C:\\Users\\holyv\\AppData\\Local\\Programs\\Julia\\Julia-1.4.1\\bin\\julia.exe",
-            "label": "Julia"
-        }
-    ],
-    "vscode-neovim.highlightGroups.unknownHighlight": {},
-    "vscode-neovim.useCtrlKeysForInsertMode": false,
-    "editor.scrollBeyondLastLine": false,
-    "peacock.affectTitleBar": false,
-    "vscode-neovim.neovimPath": "C:\\Users\\holyv\\Downloads\\Neovim\\bin\\nvim.exe",
-    "spacecode.bindings": [{
             "key": "à",
             "name": "check custom",
+            "type": "command",
+            "command": "metaGo.gotoBefore"
+        },
+        {
+            "key": "j",
+            "name": "metaGo",
             "type": "command",
             "command": "metaGo.gotoBefore"
         },
@@ -64,8 +41,20 @@
                     "name": "Zen Mode",
                     "type": "command",
                     "command": "workbench.action.toggleZenMode"
+                },
+                {
+                    "key": "r",
+                    "name": "Split Right",
+                    "type": "command",
+                    "command": "workbench.action.splitEditorRight"
                 }
             ]
+        },
+        {                    
+            "key": "l",
+            "name": "Metago jump",
+            "type": "command",
+            "command": "metaGo.gotoBefore"
         },
         {                    
             "key": "a",
@@ -92,6 +81,12 @@
                     "command": "editor.action.commentLine"
                 },
                 {
+                    "key": "d",
+                    "name": "definition",
+                    "type": "command",
+                    "command": "editor.action.revealDefinition"
+                },
+                {
                     "key": "p",
                     "name": "peek",
                     "type": "command",
@@ -106,5 +101,3 @@
             ]
         }
     ],
-    "spacecode.checkVimConfig": false
-}

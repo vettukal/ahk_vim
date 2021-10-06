@@ -118,6 +118,11 @@
         "command": "-metaGo.gotoBefore"
     },
     {
+        "key": "k",
+        "command": "spacecode.space",
+        "when": "neovim.mode == 'normal' || neovim.mode == 'visual'"
+    },
+    {
         "key": "f10",
         "command": "spacecode.space",
         "when": "neovim.mode != 'insert'"
